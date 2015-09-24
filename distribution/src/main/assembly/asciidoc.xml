@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly
+  xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.3"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.3 http://maven.apache.org/xsd/assembly-1.1.3.xsd">
+
+  <id>asciidoc</id>
+  <formats>
+    <format>dir</format>
+  </formats>
+  <includeBaseDirectory>false</includeBaseDirectory>
+
+  <moduleSets>
+    <moduleSet>
+      <useAllReactorProjects>true</useAllReactorProjects>
+      <includes>
+        <include>*</include>
+      </includes>
+      <sources>
+        <fileSets>
+          <fileSet>
+            <outputDirectory>src</outputDirectory>
+            <includes>
+                <include>*.adoc</include>
+                <include>src/main/java/**</include>
+                <include>src/main/resources/**</include>
+                <include>jqassistant/**</include>
+            </includes>
+            <filtered>true</filtered>
+            <fileMode>0755</fileMode>
+            <directoryMode>644</directoryMode>
+          </fileSet>
+        </fileSets>
+        <includeModuleDirectory>true</includeModuleDirectory>
+      </sources>
+    </moduleSet>
+  </moduleSets>
+</assembly> 

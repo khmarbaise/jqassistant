@@ -108,6 +108,16 @@
                 <artifactId>maven-assembly-plugin</artifactId>
                 <executions>
                     <execution>
+                        <id>asciidoc</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <descriptor>src/main/assembly/asciidoc.xml</descriptor>
+                        </configuration>
+                    </execution>
+                    <execution>
                         <id>attach-distribution</id>
                         <phase>package</phase>
                         <goals>
